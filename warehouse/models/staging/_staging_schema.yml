@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_events
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_users')
+                field: user_id
+              config:
+                severity: warn    # 8 orphan events are a known, intentional issue - see stg_events
+      - name: event_name
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['page_view', 'signup', 'add_to_cart', 'checkout_start', 'checkout_complete']
+
+  - name: stg_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'refunded', 'failed']
+
+  - name: stg_experiment_assignments
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: variant
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['control', 'treatment']

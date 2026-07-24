@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: users
+      - name: events
+      - name: transactions
+      - name: experiment_assignments

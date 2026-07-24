@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_funnel_conversion
+    columns:
+      - name: funnel_step
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['page_view', 'signup', 'add_to_cart', 'checkout_start', 'checkout_complete']
+      - name: sessions_reached
+        tests:
+          - not_null
+
+  - name: fct_retention_cohorts
+    columns:
+      - name: retention_pct
+        tests:
+          - not_null
