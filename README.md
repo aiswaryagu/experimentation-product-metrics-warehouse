@@ -10,6 +10,10 @@ Raw synthetic data (users, events, transactions, experiment assignments) is tran
 - **Retention cohorts** - weekly cohort retention percentages
 - **Experiment analysis** - conversion uplift between A/B test variants
 
+## Pipeline lineage
+
+![dbt lineage graph](docs/dbt_lineage_graph.png)
+
 ## Real results (from this pipeline's own data)
 
 - Funnel: page_view -> signup -> add_to_cart -> checkout_start -> checkout_complete (7,571 -> 4,174 -> 1,876 -> 1,132 -> 845), 11.2% overall conversion
