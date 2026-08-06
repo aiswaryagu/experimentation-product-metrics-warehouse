@@ -19,3 +19,23 @@ models:
       - name: retention_pct
         tests:
           - not_null
+
+  - name: fct_ltv
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: ltv
+        tests:
+          - not_null
+
+  - name: fct_ltv_by_cohort
+    columns:
+      - name: cohort_week
+        tests:
+          - unique
+          - not_null
+      - name: avg_ltv_per_user
+        tests:
+          - not_null

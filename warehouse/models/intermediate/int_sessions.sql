@@ -7,7 +7,7 @@ with events as (
 with_prev as (
     select
         *,
-        # lag(): looks at each user's PREVIOUS event timestamp, to measure the gap
+        -- lag(): looks at each user's PREVIOUS event timestamp, to measure the gap
         lag(event_timestamp) over (
             partition by user_id order by event_timestamp
         ) as prev_event_timestamp
@@ -28,8 +28,8 @@ flagged as (
 sessionized as (
     select
         *,
-        # running total: increments every time is_new_session=1, so all events
-		# between one flag and the next share the same session number
+        -- running total: increments every time is_new_session=1, so all events
+		-- between one flag and the next share the same session number
         sum(is_new_session) over (
             partition by user_id order by event_timestamp
             rows between unbounded preceding and current row

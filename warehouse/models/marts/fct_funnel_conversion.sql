@@ -27,7 +27,7 @@ totals as (
     from session_steps
 )
 
-# column names in a union all come from the FIRST select only
+-- column names in a union all come from the FIRST select only
 select
     'page_view' as funnel_step,
     1            as step_order,

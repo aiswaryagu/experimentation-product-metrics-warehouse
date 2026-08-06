@@ -46,7 +46,7 @@ select
     r.weeks_since_signup,
     r.active_users,
     c.cohort_size,
-    # nullif guards against divide-by-zero if a cohort somehow had 0 users
+    -- nullif guards against divide-by-zero if a cohort somehow had 0 users
     round(100.0 * r.active_users / nullif(c.cohort_size, 0), 1) as retention_pct
 from retention r
 inner join cohort_sizes c on r.cohort_week = c.cohort_week
