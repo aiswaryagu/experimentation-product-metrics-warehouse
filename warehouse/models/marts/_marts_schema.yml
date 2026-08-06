@@ -39,3 +39,16 @@ models:
       - name: avg_ltv_per_user
         tests:
           - not_null
+
+  - name: fct_experiment_results
+    columns:
+      - name: variant
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['control', 'treatment']
+      - name: session_completion_rate_pct
+        tests:
+          - not_null
