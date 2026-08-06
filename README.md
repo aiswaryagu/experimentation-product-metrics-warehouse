@@ -1,3 +1,5 @@
+![dbt CI](https://github.com/aiswaryagu/experimentation-product-metrics-warehouse/actions/workflows/dbt_ci.yml/badge.svg)
+
 # Experimentation & Product Metrics Warehouse
 
 A dbt-based analytics pipeline simulating 90 days of product activity for a fintech-style product, covering funnel conversion, weekly retention cohorts, and A/B experiment analysis.
