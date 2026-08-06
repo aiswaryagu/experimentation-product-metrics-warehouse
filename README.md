@@ -20,6 +20,12 @@ Raw synthetic data (users, events, transactions, experiment assignments) is tran
 - Experiment: treatment group converted at 12.42% vs 9.81% for control (~2.6 percentage-point / ~27% relative uplift)
 - 20 automated data-quality tests, correctly catching seeded data issues (orphaned events, negative transaction amounts)
 
+## Dashboard
+
+![Dashboard summary metrics](docs/dashboard_summary.png)
+![Funnel conversion chart](docs/dashboard_funnel.png)
+![Experiment results chart](docs/dashboard_experiment.png)
+
 ## Tech stack
 
 - dbt-core + dbt-duckdb
