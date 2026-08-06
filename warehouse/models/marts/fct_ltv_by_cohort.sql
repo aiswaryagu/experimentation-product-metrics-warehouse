@@ -1,3 +1,6 @@
+-- Cohort-level LTV rollup, built on top of fct_ltv rather than
+-- recomputing the join and aggregation logic from scratch.
+
 {{ config(materialized='table') }}
 
 with user_ltv as (

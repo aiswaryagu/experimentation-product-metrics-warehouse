@@ -30,6 +30,12 @@ documented business metrics:
 
 
 
+## Pipeline lineage
+
+![dbt lineage graph](docs/lineage_graph.png)
+
+
+
 \## Real results (from this pipeline's own data)
 
 

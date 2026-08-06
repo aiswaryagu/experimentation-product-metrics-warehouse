@@ -9,7 +9,7 @@ deduped as (
         lower(trim(event_name))            as event_name,
         cast(event_timestamp as timestamp) as event_timestamp,
         -- window function: labels duplicate (user_id, event_name, event_timestamp)
-		-- rows 1, 2, 3... so we can keep only the first and drop the rest
+		-- rows 1, 2, 3, so only the first is kept and the rest are dropped
         row_number() over (
             partition by user_id, event_name, event_timestamp
             order by event_id

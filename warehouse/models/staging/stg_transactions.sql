@@ -4,7 +4,7 @@ with source as (
 
 -- negative amounts are NOT filtered here on purpose - a test catches
 -- them instead, since silently deleting suspicious financial data
--- isn't something a pipeline should do quietly
+-- is not something a pipeline should do quietly
 select
     transaction_id,
     user_id,

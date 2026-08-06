@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: raw
+  - name: raw          # the name used to reference this source group in {{ source('raw', 'table') }}
+    schema: raw          # the actual schema name in the database
     tables:
       - name: users
       - name: events

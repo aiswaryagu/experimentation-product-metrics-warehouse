@@ -1,4 +1,4 @@
--- Fails (returns rows) if a later funnel step somehow has MORE sessions
+-- Fails (returns rows) if a later funnel step somehow has more sessions
 -- than an earlier step, which would indicate a modeling bug.
 with ordered as (
     select
